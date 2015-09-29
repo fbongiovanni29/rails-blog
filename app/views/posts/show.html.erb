@@ -1,0 +1,14 @@
+Title: <%= @post.title %>
+Body: <%= @post.body %>
+
+<%= form_for :comment , url: post_comments_path(@post, Comment.new)  do |f| %>
+	
+	<%= f.text_field :body%>
+	<%= f.submit "Post a comment" %>
+<%end %>
+
+<% @post.comments.each do |c| %>
+	Author: <%= c.user.name %>
+Text: <%= c.body %>
+<%end%>
+
