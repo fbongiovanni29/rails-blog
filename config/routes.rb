@@ -58,9 +58,9 @@ Rails.application.routes.draw do
 		resources :comments, :only => [:create]
 	end
 
-	get '/signup'=> "users#new"
-	post '/users'=> "users#create"
+  resources :users
 
+	
 	get '/login' => 'sessions#new'
 	post '/login' => 'sessions#create'
 	get '/logout' => 'sessions#destroy'

@@ -8,7 +8,6 @@ Body: <%= @post.body %>
 <%end %>
 
 <% @post.comments.each do |c| %>
-	Author: <%= c.user.name %>
-Text: <%= c.body %>
+Comment: <%= c.body %>
 <%end%>
 

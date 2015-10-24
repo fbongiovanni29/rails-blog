@@ -1,8 +1,6 @@
 
 <% @posts.each do |post| %>
-	
-	Title: <%= link_to post.title, post %>
-Body: <%= post.body %>
-Author: <%= post.user.name %>
-< /br>
+	<h3><%= link_to post.title, post %></h3>
+<br>
+<%= post.body %>
 <%end%>
