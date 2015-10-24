@@ -10,7 +10,9 @@
 	<div class="container">
 	<ul class="nav nav-pills">
 		<li role="presentation" class="active"><%= link_to "Home", root_path %></li>
-		<li role="presentation"><%= link_to "Profile", users_path %></li>
+	<% if !current_user.nil? %>
+		<li role="presentation"><%= link_to "Profile", user_path(current_user) %></li>
+	<% end %>
 		<li role="presentation"><%= link_to "Post", new_post_path %></li>
 	</ul>
 

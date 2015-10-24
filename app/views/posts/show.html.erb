@@ -1,13 +1,22 @@
-Title: <%= @post.title %>
-Body: <%= @post.body %>
+<div class="row">
+	<div class="col-sm-11">
+		<h1><%= @post.title %></h1>
+	</div>
+	<div class="col-sm-1">
+		<%= image_tag @user.avatar.url( :thumb ) %>
+	</div>
+<br>
+<p><%= @post.body %></p>
 
 <%= form_for :comment , url: post_comments_path(@post, Comment.new)  do |f| %>
 	
 	<%= f.text_field :body%>
 	<%= f.submit "Post a comment" %>
 <%end %>
-
-<% @post.comments.each do |c| %>
-Comment: <%= c.body %>
-<%end%>
-
+<div class="col-sm-offset-11" "col-sm-1">
+	<% @post.comments.each do |c| %>
+		Comment: <%= c.body %>
+	<% end %>
+</div>
+<br>
+<%= button_to "DELETE!", @post, :method => :delete %>

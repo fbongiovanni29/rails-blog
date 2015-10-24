@@ -1,4 +1,15 @@
 <br/>
-	<%= @user.name %>
-	<%= image_tag @user.avatar.url( :thumb ) %>
+<br>
+	<div class="col-sm-4">
+		<%= image_tag @user.avatar.url( :medium ) %>
+		<br>
+		<h4><%= @user.name %></h4>
+		<h4><%= @user.email %></h4>
+	</div>
+	<div class="col-sm-8">
+		<% @posts.each do |post| %>
+			<h1><%= link_to post.title, post_path(post.id) %></h1>
+			<p><%= post.body %>
+		<% end %>
+	</div>
 

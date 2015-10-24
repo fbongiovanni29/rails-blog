@@ -15,6 +15,7 @@ end
 
 def show
   @post = Post.find(params[:id])
+  @user = User.find(Post.find(params[:id]).user_id) 
 end
 
 
@@ -22,6 +23,11 @@ def index
   @posts = Post.all
 end
 
+def destroy
+	@post = Post.find(params[:id])
+	@post.destroy
+	redirect_to root_path
+end
 private
 
 def post_params
