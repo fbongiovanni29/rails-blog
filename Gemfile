@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'awesome_print'
+gem 'normalize-rails'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
 gem "paperclip", "~> 4.2"
 gem 'bcrypt'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

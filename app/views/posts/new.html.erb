@@ -1,8 +1,9 @@
-
-<h1>Create a new Post </h1>
-
-<%= form_for :post, url: {action: :create}  do |f| %>
- <%= f.text_field :title %>
- <%= f.text_area :body %>
- <%= f.submit 'Submit'%>
-<%end%>
+<h1>Create a new entry <%= current_user.name %></h1>
+<br>
+	<%= form_for :post, url: {action: :create}  do |f| %>
+		<%= f.text_field :title, :class => "form-control", :placeholder => 'Title here...' %>
+		<br>
+		<%= f.text_area :body, :rows => "25", :class => "form-control", :placeholder => 'Enter text...' %>
+		<br>
+		<%= f.submit "Submit!", :type => "button btn-lg", :class => "btn btn-primary"%>
+	<%end%>
